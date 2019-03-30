@@ -38,6 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.convEuroBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.euroStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -127,15 +130,33 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label4.Location = new System.Drawing.Point(157, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Select Currency";
+            this.label4.Text = "Select Currency:";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.euroStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 185);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(304, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // euroStatusLabel1
+            // 
+            this.euroStatusLabel1.Name = "euroStatusLabel1";
+            this.euroStatusLabel1.Size = new System.Drawing.Size(252, 17);
+            this.euroStatusLabel1.Text = "Select currency, click for current exchange rate";
+            this.euroStatusLabel1.Click += new System.EventHandler(this.euroStatusLabel1_Click);
             // 
             // frmEuro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 183);
+            this.ClientSize = new System.Drawing.Size(304, 207);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.convEuroBtn);
             this.Controls.Add(this.label3);
@@ -149,6 +170,8 @@
             this.Name = "frmEuro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Convert from Euro";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +188,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button convEuroBtn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel euroStatusLabel1;
     }
 }

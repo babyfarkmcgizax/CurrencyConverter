@@ -17,24 +17,48 @@ namespace CurrencyConverterOOP
             InitializeComponent();
         }
 
+        // Select from lstEuroFrom ListBox
         private void lstEuroFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+          
         }
+
 
         private void convEuroBtn_Click(object sender, EventArgs e)
         {
+            // If user selects Dollar to convert Euro to, program will x by conversion rate stored in ExchangeRates Class. 
             if (lstEuroFrom.SelectedItem == "Dollar")
             {
-                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * 1.20); // Conversion Rates ao 28/03/19 (find a way of refreshing rate?)
+                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * ExhangeRates.euroToDollar);
             }
+            // If user selects Pound to convert Euro to, program will x by conversion rate stored in ExchangeRates Class. 
             if (lstEuroFrom.SelectedItem == "Pound Sterling")
             {
-                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * 0.86);// Conversion Rates ao 28/03/19
+                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * ExhangeRates.euroToPound);
             }
+            // If user selects Yen to convert Euro to, program will x by conversion rate stored in ExchangeRates Class. 
             if (lstEuroFrom.SelectedItem == "Yen")
             {
-                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * 124.24);// Conversion Rates ao 28/03/19
+                txtEuroTo.Text = Convert.ToString(Convert.ToDouble(txtEuroFrom.Text) * ExhangeRates.euroToYen);
+            }
+        }
+
+        private void euroStatusLabel1_Click(object sender, EventArgs e)
+        {
+            // If user selects Dollar to convert Euro to, exchange rate displayed.
+            if (lstEuroFrom.SelectedItem == "Dollar")
+            {
+                euroStatusLabel1.Text = "Dollar Exchange rate: " + ExhangeRates.euroToDollar;
+            }
+            // If user selects Pound to convert Euro to, exchange rate displayed.
+            if (lstEuroFrom.SelectedItem == "Pound Sterling")
+            {
+                euroStatusLabel1.Text = "Pound Exchange rate: " + ExhangeRates.euroToPound;
+            }
+            // If user selects Yen to convert Euro to, exchange rate displayed.
+            if (lstEuroFrom.SelectedItem == "Yen")
+            {
+                euroStatusLabel1.Text = "Yen Exchange rate: " + ExhangeRates.euroToYen;
             }
         }
 

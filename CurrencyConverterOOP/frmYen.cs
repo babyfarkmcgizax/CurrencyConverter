@@ -16,7 +16,6 @@ namespace CurrencyConverterOOP
         {
             InitializeComponent();
         }
-
         private void lstYenFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
 
